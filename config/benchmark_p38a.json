@@ -1,0 +1,50 @@
+{
+  "target": {
+    "pdb_id": "1W82",
+    "native_ligand_name": "L10",
+    "chains_to_keep": [
+      "A"
+    ],
+    "search_mode": "MATCH_INBUILT",
+    "box_buffer_angstroms": 4.0,
+    "grid_spacing": 0.375
+  },
+  "ligands": {
+    "source": "DEKOIS",
+    "path": "./examples/p38a_benchmark/active_decoys.smi",
+    "subset_size": 40,
+    "active_decoy_ratio": 0.25,
+    "stratify_by": "molecular_weight",
+    "random_seed": 42
+  },
+  "docking": {
+    "backend": "AUTODOCK",
+    "runs_per_ligand": 100,
+    "heuristics": true,
+    "autostop": true,
+    "cluster_rmsd_threshold": 2.0,
+    "pose_selection": "largest_cluster",
+    "seed": 42,
+    "consensus_runs": 3,
+    "stability_top_n": 20,
+    "deterministic": true
+  },
+  "quality": {
+    "charge_cap": 1.0,
+    "rg_factor": 1.5
+  },
+  "admet": {
+    "mode": "NONE",
+    "top_n": null
+  },
+  "output": {
+    "benchmark_dir": "./examples/p38a_benchmark",
+    "output_dir": "./examples/p38a_output",
+    "generate_figures": true,
+    "save_intermediates": true
+  },
+  "hardware": {
+    "gpu_device": 0,
+    "n_workers": 4
+  }
+}

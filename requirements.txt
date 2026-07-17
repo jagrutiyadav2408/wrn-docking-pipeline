@@ -1,0 +1,19 @@
+# Core runtime dependencies (pinned for reproducibility).
+# RDKit is best installed via conda-forge; the pip wheel name is `rdkit`.
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+openpyxl==3.1.5
+matplotlib==3.9.1
+tqdm==4.66.4
+rdkit==2024.3.5          # SMILES -> 3D, descriptors, InChIKey (conda-forge recommended)
+
+# Optional / dev
+pytest==8.3.2
+pytest-mock==3.14.0
+
+# External binaries (NOT pip-installable) required at runtime:
+#   * AutoDock-GPU  (CUDA build)      -> docking
+#   * autogrid4     (AutoDock 4.2.6)  -> grid maps
+#   * Open Babel 3.x (obabel)         -> receptor/ligand prep (MGLTools substitute)
+#   * gnina (optional, Linux/CUDA)    -> CNN backend
