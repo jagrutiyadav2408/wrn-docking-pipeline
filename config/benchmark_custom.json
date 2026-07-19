@@ -1,0 +1,49 @@
+{
+  "_comment": "Template for ANY target + ANY .smi library. Fill in and run. For BLIND_DOCK set search_mode and native_ligand_name may be null. For a prospective screen use ligands.source=SMI (unlabelled) and admet.mode=TOP_N.",
+  "target": {
+    "pdb_id": "XXXX",
+    "native_ligand_name": null,
+    "chains_to_keep": [],
+    "search_mode": "BLIND_DOCK",
+    "box_buffer_angstroms": 4.0,
+    "grid_spacing": 0.375
+  },
+  "ligands": {
+    "source": "SMI",
+    "path": "./examples/custom_target/library.smi",
+    "subset_size": null,
+    "active_decoy_ratio": null,
+    "stratify_by": null,
+    "random_seed": 42
+  },
+  "docking": {
+    "backend": "AUTODOCK",
+    "runs_per_ligand": 100,
+    "heuristics": true,
+    "autostop": false,
+    "cluster_rmsd_threshold": 2.0,
+    "pose_selection": "lowest_energy",
+    "seed": 42,
+    "consensus_runs": 3,
+    "stability_top_n": 20,
+    "deterministic": true
+  },
+  "quality": {
+    "charge_cap": 1.0,
+    "rg_factor": 1.5
+  },
+  "admet": {
+    "mode": "TOP_N",
+    "top_n": 50
+  },
+  "output": {
+    "benchmark_dir": "./examples/custom_target",
+    "output_dir": "./examples/custom_output",
+    "generate_figures": true,
+    "save_intermediates": true
+  },
+  "hardware": {
+    "gpu_device": 0,
+    "n_workers": 4
+  }
+}

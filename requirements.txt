@@ -1,0 +1,20 @@
+# Core runtime dependencies, pinned to the versions used for the reported results
+# (see data/hivpr/versions.txt). RDKit installs best via conda-forge.
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+openpyxl==3.1.5
+matplotlib==3.9.1
+tqdm==4.66.4
+rdkit==2026.3.3
+biopython==1.87
+
+# Optional: local ADMET profiling (no web calls)
+admet-ai==2.0.1
+
+# Dev
+pytest==8.3.2
+pytest-mock==3.14.0
+
+# External binaries (NOT pip-installable) required at runtime:
+#   AutoDock-GPU (CUDA) · autogrid4 (AutoDock 4.2.6) · Open Babel 3.1.0

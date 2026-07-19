@@ -1,0 +1,49 @@
+{
+  "_comment": "WRN 9S18 prospective screen (manuscript Sections 3.1-3.3). The 9S18 structure and the HRO analog library are proprietary and NOT shipped in this repo: set target.pdb_path and ligands.path to your local copies. NOTE: the manuscript refers to the native inhibitor as 'HRO'; verify the actual HETATM residue code in your 9S18.pdb and set native_ligand_name to match (the copy tested during development used residue code 'YHC').",
+
+  "target": {
+    "pdb_id": "9S18",
+    "pdb_path": "./data/wrn/9S18.pdb",
+    "native_ligand_name": "YHC",
+    "chains_to_keep": ["A"],
+    "search_mode": "MATCH_INBUILT",
+    "box_buffer_angstroms": 4.0,
+    "grid_spacing": 0.375
+  },
+  "ligands": {
+    "source": "MOL2_DIR",
+    "path": "./data/wrn/ligands_mol2",
+    "subset_size": null,
+    "active_decoy_ratio": null,
+    "stratify_by": null,
+    "random_seed": 42
+  },
+  "docking": {
+    "backend": "AUTODOCK",
+    "runs_per_ligand": 100,
+    "heuristics": true,
+    "autostop": false,
+    "seed": 42,
+    "deterministic": true,
+    "pose_selection": "lowest_energy",
+    "cluster_rmsd_threshold": 2.0,
+    "gpu_device": 0
+  },
+  "admet": {
+    "mode": "TOP_N",
+    "top_n": 50,
+    "count": 50
+  },
+  "output": {
+    "benchmark_dir": "./wrn_benchmark",
+    "output_dir": "./wrn_output",
+    "generate_figures": true,
+    "save_intermediates": true
+  },
+  "hardware": {
+    "n_workers": 4,
+    "gpu_device": 0,
+    "gpu_cooldown_every_n": 50,
+    "gpu_cooldown_seconds": 60
+  }
+}

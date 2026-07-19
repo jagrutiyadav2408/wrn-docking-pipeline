@@ -1,0 +1,23 @@
+DUD-E HIV-1 protease benchmark — runtime record
+Hardware: NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), i7-13620H, 16 GB RAM
+Config:   config/benchmark_hivpr.json  (runs_per_ligand=100, deterministic=true,
+          pose_selection=lowest_energy); GPU cooldown: 60 s every 50 dockings.
+
+MEASURED
+  Total wall-clock (250 compounds) ........ 30.7 min
+  of which GPU cooldown pauses ............ 4.0 min  (4 breaks x 60 s, thermal mgmt)
+  Effective compute time .................. ~26.7 min
+
+APPROXIMATE STAGE BREAKDOWN (from run logs; not individually stopwatched)
+  Subset selection + descriptors (35,750 decoys) ... ~2-3 min
+  Ligand preparation (250 x SMILES->3D->pdbqt) ..... ~10  min
+  AutoGrid map generation (66-pt / 24.8 A box) ..... ~1   min
+  Native ROC redock control ........................ <1   min
+  Batch docking (250 x 100 GA runs, AutoDock-GPU) .. ~13  min
+  Metrics + Excel report ........................... ~1   min
+
+NOTES
+  * Manuscript target was ~25 min; the 30.7 min measured includes the 4 min of
+    user-requested GPU cooldown pauses. Without cooldowns the run is ~26-27 min.
+  * runs_per_ligand=400 was tested separately and did NOT improve reproducibility
+    (per-compound sigma got worse); 100 runs is sufficient with lowest_energy.

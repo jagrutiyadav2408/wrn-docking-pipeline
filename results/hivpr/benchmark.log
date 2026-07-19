@@ -1,0 +1,11 @@
+# Excerpt from the validated HIVPR benchmark run (AutoDock-GPU v1.6).
+# Full provenance: data/hivpr/versions.txt
+INFO  docksuite.benchmark: DUD-E HIV-1 PROTEASE BENCHMARK (1HXB / ROC)
+INFO  docksuite.ligands:   DUD-E HIVPR actual counts: 536 actives, 35750 decoys
+INFO  docksuite.ligands:   Subset: 62 actives + 188 decoys (MW-quartile stratified, seed 42)
+INFO  docksuite.grid:      Pocket center: (18.257, -0.023, 11.416) | Box 24.8 A (66 pts) | spacing 0.375
+INFO  docksuite.docking:   SYSTEM CONTROL BASELINE SCORE: -13.88 kcal/mol
+INFO  docksuite.poses:     redock RMSD (single-altloc ROC): 0.63 A -> PASS
+INFO  docksuite.metrics:   ROC-AUC 0.806 (bootstrap 0.805 +/- 0.034; 95% CI [0.738, 0.872])
+INFO  docksuite.metrics:   EF 1%/5%/10% = 4.03 / 4.03 / 3.23 | BEDROC(a=20) 0.868
+INFO  docksuite.benchmark: top-15 ranked compounds: 15/15 actives

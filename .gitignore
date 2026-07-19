@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Test / cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Pipeline run artifacts (regenerated from configs)
+examples/*/*.pdb
+examples/*/*.pdbqt
+examples/*/*.dlg
+examples/*/*.map
+examples/*/*.fld
+examples/*/*.glg
+examples/*/*.xlsx
+examples/*/*.png
+examples/**/dude/
+*.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# machine-specific configs (personal paths)
+config/local/
+validation_data/

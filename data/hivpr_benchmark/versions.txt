@@ -1,0 +1,17 @@
+# ACTUAL software provenance for the reported HIVPR benchmark (auto-generated).
+# These are the versions that produced results/hivpr/*.xlsx. If your manuscript
+# cites different versions, reconcile the manuscript to THIS file before submission.
+
+Python           3.12.2
+NumPy            1.26.4
+Pandas           2.2.2
+scikit-learn     1.5.1
+OpenPyXL         3.1.5
+Biopython        1.87
+RDKit            2026.03.3
+ADMET-AI         2.0.1
+Chemprop         2.2.4
+Open Babel       3.1.0
+AutoGrid         4.2.6
+AutoDock-GPU     v1.6|Release|x64
+GPU              NVIDIA GeForce RTX 4060 Laptop GPU (8 GB)

@@ -1,0 +1,57 @@
+{
+  "_comment": "Generic template for ANY target + ANY library. Copy, edit, and run: python scripts/run_benchmark.py --config <your.json> (labelled sets) or scripts/run_screen.py (unlabelled). Keys marked OPTIONAL may be omitted.",
+
+  "target": {
+    "pdb_id": "XXXX",
+    "pdb_path": null,
+    "native_ligand_name": "LIG",
+    "chains_to_keep": [],
+    "search_mode": "MATCH_INBUILT",
+    "box_buffer_angstroms": 4.0,
+    "grid_spacing": 0.375
+  },
+  "ligands": {
+    "source": "SMI",
+    "target_name": null,
+    "path": "./library.smi",
+    "subset_size": null,
+    "active_decoy_ratio": null,
+    "stratify_by": null,
+    "random_seed": 42
+  },
+  "docking": {
+    "backend": "AUTODOCK",
+    "runs_per_ligand": 100,
+    "heuristics": true,
+    "autostop": false,
+    "seed": 42,
+    "deterministic": true,
+    "pose_selection": "lowest_energy",
+    "consensus_runs": 1,
+    "stability_top_n": 20,
+    "cluster_rmsd_threshold": 2.0,
+    "gpu_device": 0
+  },
+  "quality": {
+    "charge_cap": 1.0,
+    "enable_shape_gate": false,
+    "rg_factor": 1.5
+  },
+  "admet": {
+    "mode": "NONE",
+    "top_n": null,
+    "count": 0
+  },
+  "output": {
+    "benchmark_dir": "./work",
+    "output_dir": "./output",
+    "generate_figures": true,
+    "save_intermediates": true
+  },
+  "hardware": {
+    "n_workers": 4,
+    "gpu_device": 0,
+    "gpu_cooldown_every_n": 0,
+    "gpu_cooldown_seconds": 0
+  }
+}
